@@ -1,0 +1,171 @@
+.ticker-wrapper {
+  width: 100%;
+  background: #000;
+  padding: 20px 0;
+  overflow: hidden; /* Prevents unnecessary scrollbars */
+}
+
+.ticker-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.ticker-scroll {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden; /* Ensures no scrollbar appears */
+  background: #000;
+  border-radius: 8px;
+  padding: 0 10px;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Reduce gap to prevent excessive width */
+  height: 100%;
+  white-space: nowrap;
+  min-width: 100%; /* Ensures it spans full width without triggering a scroll */
+  animation: tickerSlide 20s linear infinite; /* Enables smooth scrolling */
+}
+
+.ticker-item {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Ensures items stay in one line */
+}
+
+.ticker-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* News Description Box Styles */
+.news-description-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  pointer-events: none; /* Allow hover to work through the overlay */
+}
+
+.news-description-box {
+  background: #000000;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid #f0f0f0;
+  pointer-events: auto; /* Make the box clickable */
+  cursor: pointer; /* Show pointer cursor */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-description-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.news-description-box h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 16px;
+  padding-right: 20px;
+}
+
+.news-description-box p {
+  color: #a09999;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.click-instruction {
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  background: #c30;
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+@keyframes tickerSlide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.loading-text {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ticker-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  margin-left: -30px;
+  animation: fadeInSlide 1s ease-out forwards, pulseEffect 2s infinite ease-in-out;
+}
+
+.ticker-title:hover {
+  transform: scale(1.1);
+  color: #a4a39e; /* Change color on hover */
+  transition: transform 0.3s ease, color 0.3s ease;
+}

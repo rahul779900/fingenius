@@ -1,0 +1,217 @@
+.pricing-container {
+  background-color: #050505;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pricing-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.pricing-header p {
+  font-size: 18px;
+  color: #A0A6BA;
+  max-width: 600px;
+}
+
+.billing-toggle {
+  display: inline-flex;
+  background-color: rgba(30, 40, 70, 0.5);
+  border-radius: 28px;
+  padding: 4px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: background-color 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #2D68FF;
+}
+
+.save-badge {
+  position: absolute;
+  right: -10px;
+  top: -8px;
+  background-color: rgba(45, 104, 255, 0.2);
+  color: #2D68FF;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.pricing-plans {
+  display: flex;
+  justify-content: center;
+  gap: 40px; 
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pricing-card {
+  background-color: #0B0F2A;
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 280px;
+  flex: 1;
+  max-width: 350px;
+  border: 1px solid white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(45, 104, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pricing-card.premium {
+  border: 1px solid #ffffff;
+}
+
+.pricing-card.premium:hover {
+  border: 1px solid #2D68FF;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: #2D68FF;
+  color: white;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pricing-card h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.pricing-card > p {
+  color: #A0A6BA;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.currency {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.amount {
+  font-size: 36px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.custom-text {
+  font-size: 36px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.period {
+  color: #A0A6BA;
+  font-size: 16px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 auto 0;
+}
+
+.features-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  color: #A0A6BA;
+}
+
+.features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2D68FF;
+  font-weight: bold;
+}
+
+.action-button {
+  background-color: transparent;
+  border: 1px solid white; 
+  color: white;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.action-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.action-button.subscribe {
+  background-color: #2D68FF;
+  border: 1px solid white;
+}
+
+.action-button.subscribe:hover {
+  background-color: #1A54E8;
+  border-color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .pricing-plans {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+  }
+
+  .pricing-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}

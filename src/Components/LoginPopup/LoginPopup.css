@@ -1,0 +1,284 @@
+body{
+  color: white;
+}.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  color: white;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-overlay.visible {
+  opacity: 1;
+}
+
+.popup-container {
+  background-color: rgb(0, 0, 0);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 410px;
+  padding: 24px;
+  border: 1px solid white;
+  color: white;
+  transform: scale(0.95) translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+}
+
+.popup-container.visible {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.popup-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  
+}
+
+.close-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: #f5f5f5;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #928f8f;
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.2s;
+}
+
+.close-button:hover .close-icon {
+  stroke: #333;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.popup-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.popup-input:hover {
+  border-color: #bdbdbd;
+}
+
+.popup-input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(188, 188, 189, 0.1);
+}
+
+.submit-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #5f5f61;
+  transform: translateY(-1px);
+  color: white;
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.terms-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: -8px;
+}
+
+.terms-checkbox {
+  margin-top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.terms-label {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.switch-form {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.switch-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.switch-button:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Animation keyframes for popup entrance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .popup-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .popup-header h2 {
+    font-size: 20px;
+  }
+
+  .popup-input {
+    padding: 10px 14px;
+  }
+
+  .submit-button {
+    padding: 10px;
+  }
+}
+
+.popup-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-container:hover {
+  background-color: black;
+  border: 2px solid white;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  animation: glow 0.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 10px 35px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.popup-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-container:hover {
+  background-color: black;
+  border: 2px solid white;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  animation: glow 0.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 10px 35px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.popup-input {
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-input:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: scale(1.02);
+}
+
+.popup-input:focus {
+  background-color: black;
+  border-color: white;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: scale(1.03);
+}

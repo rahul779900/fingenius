@@ -1,0 +1,190 @@
+/* Base styles */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Header styles */
+  .header-section {
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(to bottom right, #1e3a8a, #000000);
+    padding: 2rem 0;
+    margin-top: 70px;
+    border-radius: 15px;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: #ccc;
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+  
+  .divider {
+    width: 6rem;
+    height: 2px;
+    background-color: #666;
+    margin: 1.5rem auto;
+  }
+  
+  /* Section styles */
+  .service-section {
+    margin-bottom: 5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Card grid layout */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Card styles */
+  .service-card {
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-accent {
+    height: 0.5rem;
+    background-color: #444;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-description {
+    color: #bbb;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Feature list styles */
+  .feature-list {
+    margin-bottom: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    color: #bbb;
+  }
+  
+  .check-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    margin-top: 0.125rem;
+    color: #777;
+    flex-shrink: 0;
+  }
+  
+  /* Button styles */
+  .card-button {
+    padding: 0.5rem 1rem;
+    background-color: #125eaf;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .card-button:hover {
+    background-color: #444;
+  }
+  
+  /* CTA section styles */
+  .cta-section {
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 4rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #333;
+  }
+  
+  .cta-description {
+    font-size: 1.25rem;
+    color: #bbb;
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .primary-button {
+    padding: 0.75rem 2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .primary-button:hover {
+    background-color: #444;
+  }
+  
+  .secondary-button {
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: #ccc;
+    border: 2px solid #444;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }

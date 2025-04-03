@@ -1,0 +1,126 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black; /* Adjust based on your theme */
+    z-index: 1000; /* Ensures it's above other elements */
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between; /* Aligns nav-left and nav-right to opposite sides */
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-left: 3px;
+   
+}
+
+.nav-left img {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-left input {
+    height: 3vh;
+    width: 20vw;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 15px;
+    background-color: black;
+    transition: background-color 0.3s ease;
+    color: white;
+    margin-left: 20px;
+}
+
+.nav-left input:hover {
+    box-shadow: 1px 1px 2px #f4f3f3;
+}
+.nav-left input::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 14px; 
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    background: transparent;
+    margin-right: 20px; /* Push it to the right */
+}
+
+.nav-right img {
+    height: 30px;
+    width: 130px;
+    object-fit: cover;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: -30px;
+}
+.nav-right img:hover {
+    background-color: #333;
+}
+
+
+/*.profile-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+   
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+
+  
+  .profile-button:hover .profile-image {
+    border-color: #3498db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  .profile-button:active .profile-image {
+    transform: scale(0.95);
+  }
+  
+  .profile-button:focus {
+    outline: none;
+  }
+  
+  .profile-button:focus .profile-image {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+  }*/
+  .nav-right button {
+    height: 40px;
+    width: 90px;
+    border: 1px solid azure;
+    border-radius: 15px;
+    padding: 12px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-right button:hover {
+    background-color: #333;
+}
