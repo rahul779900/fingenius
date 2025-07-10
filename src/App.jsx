@@ -5,7 +5,7 @@ import NewsTicker from './Components/Footer/NewsTicker';
 import Courses from './Components/Courses/Courses';
 import Loans from './Components/Courses/Loans';
 import VideoCoverFlow from './Components/VideoControlFlow/VideoCoverFlow';
-import LoginPopup from './Components/LoginPopup/LoginPopup';
+//import LoginPopup from './Components/LoginPopup/LoginPopup';
 import Content from './Components/Content/Content';
 import ServicesPage from './Components/Services/Services';
 import AboutUs from './Components/AboutUs/AboutUs';
@@ -28,7 +28,7 @@ const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   return (
-    <Router>
+  
       <div className="app">
         <Routes>
           <Route path="/" element={<><Navbar setShowLogin={setShowLogin} /><Content /><NewsTicker /></>} />
@@ -55,7 +55,7 @@ const App = () => {
         {/* Login Popup */}
         {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
       </div>
-    </Router>
+    
   );
 };
 

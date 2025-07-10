@@ -1,217 +1,475 @@
-.pricing-container {
-  background-color: #050505;
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  padding: 60px 20px;
+/* -------------------
+  Background & Layout
+-------------------- */
+.subscription-container {
   min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  position: relative;
+  color: white;
+  
+  padding:5px;
+}
+
+.background-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(57, 57, 57, 0.6),
+    rgba(0, 0, 0, 0.4),
+    rgba(57, 57, 57, 0.5)
+  );
+  backdrop-filter: blur(5px);
+  z-index: -10;
+}
+
+/* -------------------
+  Sidebar
+-------------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.sidebar-open {
+  width: 256px;
+}
+
+.sidebar-closed {
+  width: 0;
+}
+
+.sidebar-content {
+  padding: 24px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebar-nav {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.nav-item {
+  display: flex;
   align-items: center;
-  margin-top: 15px;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.pricing-header {
-  text-align: center;
-  margin-bottom: 40px;
+.nav-item-active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
-.pricing-header h1 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 16px;
+.nav-item-inactive {
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.pricing-header p {
-  font-size: 18px;
-  color: #A0A6BA;
-  max-width: 600px;
+.nav-item-inactive:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.billing-toggle {
-  display: inline-flex;
-  background-color: rgba(30, 40, 70, 0.5);
-  border-radius: 28px;
-  padding: 4px;
-  margin-bottom: 50px;
+/* -------------------
+  Header
+-------------------- */
+.header {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 24px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-bar {
   position: relative;
 }
 
-.toggle-button {
-  background: none;
-  border: none;
+.search-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px 8px 40px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  padding: 10px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 24px;
-  transition: background-color 0.3s;
+  width: 250px;
+  transition: 0.3s;
 }
 
-.toggle-button.active {
-  background-color: #2D68FF;
+.search-input:focus {
+  border-color: white;
+  outline: none;
 }
 
-.save-badge {
+.search-icon {
   position: absolute;
-  right: -10px;
-  top: -8px;
-  background-color: rgba(45, 104, 255, 0.2);
-  color: #2D68FF;
-  font-size: 12px;
-  padding: 3px 6px;
-  border-radius: 4px;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.pricing-plans {
+.app-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* -------------------
+  Profile
+-------------------- */
+.profile-button {
   display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.profile-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 40px; 
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
+}
+
+.profile-info {
+  text-align: left;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-points {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* -------------------
+  Main Section
+-------------------- */
+.main-content {
+  padding: 32px;
+}
+
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 12px;
+}
+
+/* -------------------
+  Pricing Cards
+-------------------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 32px;
 }
 
 .pricing-card {
-  background-color: #0B0F2A;
-  border-radius: 10px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  min-width: 280px;
-  flex: 1;
-  max-width: 350px;
-  border: 1px solid white;
-  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 32px 24px;
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: 0.4s ease;
+  position: relative;
+  height: 100%;
 }
 
-.pricing-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(45, 104, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.pricing-card-hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
-.pricing-card.premium {
-  border: 1px solid #ffffff;
-}
-
-.pricing-card.premium:hover {
-  border: 1px solid #2D68FF;
+.pricing-card-popular {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .popular-badge {
   position: absolute;
-  top: 20px;
-  left: 0;
-  background-color: #2D68FF;
-  color: white;
-  font-size: 14px;
-  padding: 4px 12px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.pricing-card h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.pricing-card > p {
-  color: #A0A6BA;
-  margin-bottom: 24px;
-  font-size: 15px;
-}
-
-.price {
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  gap: 6px;
 }
 
-.currency {
+.card-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  padding: 16px;
+  border-radius: 9999px;
+  transition: 0.4s ease;
+}
+
+.card-icon-normal {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.card-icon-hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+.card-title {
   font-size: 24px;
-  font-weight: 500;
-}
-
-.amount {
-  font-size: 36px;
   font-weight: 700;
-  margin-right: 4px;
+  text-align: center;
+  margin-bottom: 12px;
 }
 
-.custom-text {
+.card-price {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.price-amount {
   font-size: 36px;
-  font-weight: 700;
-  margin-right: 4px;
+  font-weight: 800;
 }
 
-.period {
-  color: #A0A6BA;
+.price-period {
   font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 6px;
 }
 
-.features-list {
+.features-container {
   list-style: none;
   padding: 0;
-  margin: 0 0 auto 0;
+  margin: 0;
+  flex: 1;
 }
 
-.features-list li {
-  padding: 8px 0 8px 28px;
-  position: relative;
-  color: #A0A6BA;
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.features-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #2D68FF;
-  font-weight: bold;
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.feature-dot-normal {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.feature-dot-hover {
+  background-color: white;
+}
+
+.feature-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.feature-text-hover {
+  color: white;
+}
+
+/* -------------------
+  Buttons
+-------------------- */
+.card-actions {
+  margin-top: auto;
 }
 
 .action-button {
-  background-color: transparent;
-  border: 1px solid white; 
-  color: white;
-  border-radius: 4px;
-  padding: 12px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 30px;
   width: 100%;
-  transition: all 0.3s ease;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  transition: 0.3s;
+}
+
+.primary-button-hover {
+  background-color: white;
+  color: black;
+}
+
+.secondary-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
+  gap: 8px;
+  border: 2px solid;
 }
 
-.action-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.03);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+.secondary-button-enabled {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
-.action-button.subscribe {
-  background-color: #2D68FF;
-  border: 1px solid white;
+.secondary-button-enabled:hover {
+  background-color: white;
+  color: black;
+  border-color: white;
 }
 
-.action-button.subscribe:hover {
-  background-color: #1A54E8;
-  border-color: #ffffff;
+.secondary-button-disabled {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
 }
 
-@media (max-width: 992px) {
-  .pricing-plans {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px; 
+.points-needed {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 6px;
+}
+
+/* -------------------
+  Footer Points
+-------------------- */
+.points-balance {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.points-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.points-text {
+  font-size: 18px;
+}
+
+.points-amount {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* -------------------
+  Responsive
+-------------------- */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
   }
 
-  .pricing-card {
-    max-width: 100%;
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .search-input {
     width: 100%;
+  }
+
+  .profile-button {
+    width: 100%;
+    justify-content: space-between;
   }
 }

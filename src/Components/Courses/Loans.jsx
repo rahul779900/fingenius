@@ -1,9 +1,69 @@
 import React, { useState } from 'react';
 import './Loans.css';
 
+
+
+
 const Loans = ({ currentPage = 1 }) => {
   const [showVideo1, setShowVideo1] = useState(false);
   const [showVideo2, setShowVideo2] = useState(false);
+
+  const comments = [
+  { author: 'Alice', text: 'Great explanation! 😊', time: '2 days ago', avatar: 'https://i.pravatar.cc/36?img=1' },
+  { author: 'Bob', text: 'Can you cover interest calculation next?', time: '1 day ago', avatar: 'https://i.pravatar.cc/36?img=2' },
+  { author: 'Charlie', text: 'Very clear and concise.', time: '5 hours ago', avatar: 'https://i.pravatar.cc/36?img=3' },
+  { author: 'Dana', text: 'Helped me understand EMIs 👌', time: '2 hours ago', avatar: 'https://i.pravatar.cc/36?img=4' },
+];
+
+// ✅ Single Comment
+const Comment = ({ avatar, author, time, text }) => (
+  <div className="yt-comment">
+    <img src={avatar} alt="avatar" className="yt-avatar" />
+    <div className="yt-comment-body">
+      <div className="yt-comment-header">
+        <span className="yt-author">{author}</span>
+        <span className="yt-time">{time}</span>
+      </div>
+      <div className="yt-comment-text">{text}</div>
+      <div className="yt-comment-actions">
+        <button>👍</button>
+        <button>👎</button>
+        <button>Reply</button>
+      </div>
+    </div>
+  </div>
+);
+
+// ✅ Comments List
+const CommentsSection = () => (
+  <div className="comments-section">
+    <h2>Comments</h2>
+    {comments.map((comment, index) => (
+      <Comment
+        key={index}
+        avatar={comment.avatar}
+        author={comment.author}
+        time={comment.time}
+        text={comment.text}
+      />
+    ))}
+  </div>
+);
+
+const VideoWithComments = ({ videoUrl }) => (
+  <div className="video-comments-wrapper">
+    <div className="video">
+      <iframe
+        src={videoUrl}
+        title="Loan Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+    <CommentsSection />
+  </div>
+);
   const renderPageContent = () => {
     switch (currentPage) {
       case 1:
@@ -11,10 +71,8 @@ const Loans = ({ currentPage = 1 }) => {
           <div className="page-content">
             <div className='course-content'>
             
-              <h1>What are loans?</h1>
-              <div className='video'>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/mzYwYJT-zsU?si=956IjdwLNaWj2nzK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+              <h1 className='loanh1'>What are loans?</h1>
+             <VideoWithComments videoUrl="https://www.youtube.com/embed/mzYwYJT-zsU" />
               <p>A loan is an amount of money borrowed from a lender (such as a bank, financial institution, or individual) that must be repaid over time, usually with interest. The borrower agrees to repay the loan in installments or as a lump sum within a specified period.</p>
               <p><strong>Key Components of a Loan:</strong><br />
                 <strong>Principal:</strong> The original amount borrowed.<br />
@@ -39,6 +97,8 @@ const Loans = ({ currentPage = 1 }) => {
          
             <div className='course-content'>
               <h1>Types of loans</h1>
+              <VideoWithComments videoUrl="https://www.youtube.com/embed/hRWZFZnTp28" />
+
               <p>There are different types of loans based on the purpose of borrowing and the borrower's creditworthiness.</p>
               <ul>
                 <li>

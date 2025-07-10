@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 import './LoginPopup.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -129,3 +129,4 @@ const LoginPopup = ({ setShowLogin }) => {
 };
 
 export default LoginPopup;
+*/

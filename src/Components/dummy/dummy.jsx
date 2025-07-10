@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Content1 from '../Content/Content1';
 import NewsTicker from '../Footer/NewsTicker';
-import LoginPopup from '../LoginPopup/LoginPopup';
 
 
 const Dummy = () => {
@@ -13,11 +12,10 @@ const Dummy = () => {
   };
   
   return (
-    <>
-      <Navbar onSignupClick={handleSignupClick} setShowLogin={setShowLogin}  />
+     <>
+      <Navbar />
       <Content1 />
       <NewsTicker />
-      {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
     </>
   );
 };

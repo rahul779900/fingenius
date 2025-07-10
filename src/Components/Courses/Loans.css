@@ -1,153 +1,280 @@
+/* Global Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Container */
 .loans-container {
-    margin: 0 auto;
-    background:transparent;
-    color: white;
-    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
     padding: 20px;
-    margin-top: 10px;
 }
+
+/* Main Heading */
+.loanh1 {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+}
+
+/* Page Content */
 .page-content {
-    transition: opacity 0.4s ease-in-out;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.6s ease-in-out;
 }
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.course-content strong {
-    color: #ffffff;
-}
-.video {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  /*  margin: 15px 0;*/
-    position: relative;
-    right:320px;
-}
-.video-thumbnail {
-    width: 80%;
-    max-width: 800px;
-    height: 400px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-.video-thumbnail:hover {
-    transform: scale(1.02);
-}
+
+/* Main Content Block */
 .course-content {
-    background: transparent;
-    color: rgb(193, 186, 186);
-    font-size: 16px; /* Reduced font size */
-    line-height: 1.5;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 15px 0;
-    margin-top: -50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background:rgb(7, 7, 7);
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    margin-bottom: 40px;
 }
+
+/* Section Headings */
 .course-content h1 {
-    color: #ffffff;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 1.5rem; /* Reduced heading size */
+    color: #f5f5f5;
+    border-bottom: 2px solid #333;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
+
+/* Paragraph Styling */
 .course-content p {
-    margin-bottom: 14px;
-    font-size: 15px; /* Smaller paragraph font */
-    margin-top: 30px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    margin-top: 20px;
 }
+
+/* Lists */
 .course-content ul {
     padding-left: 20px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
+
 .course-content li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     list-style: disc;
-    font-size: 15px; /* Smaller list font */
+    font-size: 16px;
 }
+
+/* Emphasized Text */
 .course-content strong {
     color: #fff;
 }
-.video iframe {
-    width: 80%;
-    max-width: 800px;
-    height: 350px; /* Adjusted height */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-/* Interactive navigation buttons */
-.nav-button {
-    transform: scale(1);
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-.nav-button:hover:not(.disabled) {
-    background: #555 !important; /* Brighter hover state */
-    transform: scale(1.05);
-}
-.nav-button:active:not(.disabled) {
-    transform: scale(0.98);
-}
-.nav-button.disabled {
-    opacity: 0.4;
-}
-/* Animation for page transitions */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+
+.video-comments-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-/* Media queries for responsive design */
+/* === Video Styling === */
+.video iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+/* === Comments Section === */
+.comments-section {
+  flex: 1;
+  position: sticky;
+  top: 80px;
+  max-height: 520px;
+  overflow-y: auto;
+  background: #181818;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.comments-section h2 {
+  color:rgb(247, 248, 249);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* === YouTube-style Comment === */
+.yt-comment {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.yt-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.yt-comment-body {
+  flex: 1;
+}
+
+.yt-comment-header {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.yt-author {
+  color: #fff;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.yt-comment-text {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 6px;
+}
+
+.yt-comment-actions button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 13px;
+  margin-right: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.yt-comment-actions button:hover {
+  color: #fff;
+}
+
+/* Hide scrollbar for comments section */
+.comments-section::-webkit-scrollbar {
+  display: none;
+}
+
+.comments-section {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+/* Page Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Video & Comments Wrapper */
+.video-comments-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* Video Section */
+.video {
+    flex: 1 1 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.video iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
+}
+
+/* Comments Section */
+.comments-section {
+    flex: 1 1 35%;
+    position: sticky;
+    top: 80px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    height: fit-content;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.comments-section h2 {
+    color:rgb(252, 253, 253);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.comment {
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background-color: #292929;
+    border-radius: 6px;
+    color: #ccc;
+    font-size: 15px;
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
-    .video iframe, .video-thumbnail {
-        width: 90%;
+    .video iframe {
+        width: 100%;
         height: 320px;
+    }
+    .course-content {
+        padding: 25px;
+    }
+    .loanh1 {
+        font-size: 36px;
     }
 }
 
 @media (max-width: 768px) {
-    .video iframe, .video-thumbnail {
+    .video-comments-wrapper {
+        flex-direction: column;
+    }
+    .video iframe {
         width: 100%;
         height: 280px;
     }
-    
+    .comments-section {
+        position: static;
+        max-height: none;
+    }
     .course-content {
-        font-size: 15px;
-        padding: 15px;
+        padding: 20px;
     }
-    
     .course-content h1 {
-        font-size: 1.3rem;
+        font-size: 26px;
     }
-    
     .course-content p, .course-content li {
         font-size: 14px;
+    }
+    .loanh1 {
+        font-size: 30px;
     }
 }
 
 @media (max-width: 576px) {
-    .video iframe, .video-thumbnail {
+    .video iframe {
         height: 220px;
     }
-    
-    .loans-container {
-        padding: 15px 10px;
-    }
-    
     .course-content {
-        padding: 12px;
+        padding: 15px;
+    }
+    .loanh1 {
+        font-size: 26px;
     }
 }
