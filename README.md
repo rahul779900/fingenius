@@ -60,3 +60,4 @@ We welcome contributions to **Fin_Genius**! Feel free to **open issues** and **s
 3. Make your changes and commit (`git commit -m "Added new feature"`).
 4. Push the changes (`git push origin feature-branch`).
 5. Open a pull request.
+# fingenius
