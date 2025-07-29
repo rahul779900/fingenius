@@ -1,6 +1,6 @@
-# Fin_Genius
+# FinGenius
 
-##  About Fin_Genius
+##  About FinGenius
 Fin_Genius is a **personalized financial assistance platform** designed to empower users with financial knowledge and management skills. Our platform provides a comprehensive learning experience, offering courses from **basic to advanced finance**, covering topics such as **loans, credit cards, credit score maintenance, banking, and insurance management**. 
 
 ### 🔥 Key Features:
@@ -35,7 +35,7 @@ Fin_Genius is a **personalized financial assistance platform** designed to empow
 ## 🛠️ Installation & Setup
 ### **Clone the Repository**
 ```sh
- git clone https://github.com/padmanjani-Gorrela/Fin_Genius.git
+ git clone https://github.com/rahul779900/fingenius.git
  cd Fin_Genius
 ```
 
@@ -52,7 +52,7 @@ npm start
 ---
 
 ## 📌 Contributing
-We welcome contributions to **Fin_Genius**! Feel free to **open issues** and **submit pull requests** to improve the platform.
+We welcome contributions to **FinGenius**! Feel free to **open issues** and **submit pull requests** to improve the platform.
 
 ### **Steps to Contribute:**
 1. Fork the repository.
